@@ -36,6 +36,14 @@ Topic.hasMany(Room, {
   foreignKey: 'topicId'
 });
 
+Topic.hasMany(Label, {
+  'as': 'labels'
+});
+
+Label.hasMany(Topic, {
+  'as': 'topics'
+});
+
 Model.User = User;
 Model.Profile = Profile;
 Model.Label = Label;
