@@ -1,5 +1,8 @@
 Page({
     data: {
 
+    },
+    onLoad(e) {
+
     }
 });

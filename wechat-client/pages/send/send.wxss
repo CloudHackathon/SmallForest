@@ -44,9 +44,23 @@
     bottom: 0;
 }
 
+.sendMain .current {
+    background-color: #00bfbe;
+    color: #fff;
+}
+
 .finish {
     display: block;
     text-align: center;
     font-size: 32rpx;
     color: #fff;
+}
+
+.message {
+    font-size: 28rpx;
+}
+
+.messageInput {
+    height: 100rpx;
+    padding-left: 20rpx;
 }
