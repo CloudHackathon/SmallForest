@@ -5,26 +5,26 @@
     </view>
 
     <view class="listContent">
-        这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题
+        {{ topicContent }}
     </view>
 </view>
 
 <view class="imTimeTip"><text class="imTimeText"> 只能看24小时内的留言哦 </text></view>
 
 <view class="container wrap">
-    <view class="imList clearBox">
+    <view class="imList clearBox" wx:for="{{messages}}">
         <image class="avatar" mode="" src=""></image>
 
         <view class="imContent">
             <view class="message-box">
-                <text>我是利用 border 属性实现我是利用 border 属性实现的我是利用 border 属性实现的我是利用 border 属性实现的我是利用 border 属性实现的我是利用 border 属性实现的的</text>
+                <text>{{item.text}}</text>
                 <view class="triangle-border tb-border"></view>
                 <view class="triangle-border tb-background"></view>
             </view>
         </view>
     </view>
 
-    <view class="imList clearBox">
+    <!-- <view class="imList clearBox">
         <image class="right-avatar" mode="" src=""></image>
 
         <view class="right-imContent">
@@ -59,7 +59,7 @@
 
             <view class="imTime"> 2 ” <i class="iconDist"></i></view>
         </view>
-    </view>
+    </view> -->
 </view>
 
 <view class="imSelector">

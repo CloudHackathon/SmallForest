@@ -57,7 +57,7 @@ UserService.random = function() {
 
   var user = {
     email: Utils.random(8) + '@smail.forest',
-    password: Utils.random(16),
+    password: 12345678,
     name: randomName.generate()
   };
 
