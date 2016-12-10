@@ -1,0 +1,12 @@
+{
+  "apps" : [{
+    "name"        : "SmallForest",
+    "script"      : "./server/app.js",
+    "env": {
+        "PORT": 3000,
+        "NODE_ENV": "test",
+        "DEBUG": "*",
+        "DEBUG_COLORS": 1
+    }
+  }]
+}
