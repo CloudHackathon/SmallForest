@@ -45,4 +45,6 @@ module.exports = function (app) {
   app.use(route.get('/topics/:id', topic.listTopics));
   app.use(route.get('/users/:id/notices', user.listNotices));
 
+  app.use(route.get('/labels', user.listLabels));
+
 };

@@ -13,6 +13,10 @@ var LabelTopic = Model.LabelTopic;
 
 var UserService = module.exports;
 
+UserService.listLabels = function() {
+  return Label.findAll();
+};
+
 UserService.getOwnedTopics = function(id) {
 
   return Topic

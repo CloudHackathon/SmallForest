@@ -20,13 +20,17 @@ module.exports = {
   getOwnedTopics: getOwnedTopics,
   getAppliedTopics: getAppliedTopics,
   postTopic: postTopic,
-  listNotices: listNotices
+  listNotices: listNotices,
+  listLabels: listLabels
 };
 
 function* getAppliedTopics(id) {
   this.body = yield userService.getAppliedTopics(id);
 }
 
+function* listLabels() {
+  this.body = yield userService.listLabels();
+}
 
 function* listNotices(id) {
   if (parseInt(this.session.id) !== parseInt(id)) {
