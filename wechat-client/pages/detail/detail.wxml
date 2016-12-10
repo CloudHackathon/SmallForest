@@ -1,0 +1,12 @@
+<view class="detail">
+    <view class="clearBox">
+        <view class="tip"><i class="tipIconfont"></i> <i class="tipText">工作</i></view>
+        <text class="time">2016-12-10</text>
+    </view>
+
+    <view class="content">
+        我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容
+    </view>
+</view>
+
+<button class="btn">结束话题</button>

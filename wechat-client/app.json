@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/im/im",
+    "pages/send/send",
+    "pages/found/found",
+    "pages/message/message",
+    "pages/more/more"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#232a34",
+    "navigationBarTitleText": "小森林",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color":"#52668C",
+    "selectedColor":"#3378DD",
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/tabbar/common_icon_quote_normal.png",
+      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+    },
+    {
+      "pagePath": "pages/found/found",
+      "text": "发现",
+      "iconPath": "images/tabbar/common_icon_quote_normal.png",
+      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+    },
+    {
+      "pagePath": "pages/message/message",
+      "text": "消息",
+      "iconPath": "images/tabbar/common_icon_quote_normal.png",
+      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+    },
+    {
+      "pagePath": "pages/more/more",
+      "text": "更多",
+      "iconPath": "images/tabbar/common_icon_quote_normal.png",
+      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+    }]
+  }
+}

@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="section">
+        <textarea class="input" placeholder="穿上马甲，吐个槽吧~" auto-focus />
+    </view>
+
+    <view class="sendMain">
+        <view class="tab wrap">
+            <text class="tabItem">工作</text>
+            <text class="tabItem">生活</text>
+            <text class="tabItem">情感</text>
+        </view>
+
+        <view class="send"><view class="mood"><i class="iconfont icon-xiaolian"></i></view> <text class="finish"> 吐槽完毕 </text></view>
+    </view>
+</view>

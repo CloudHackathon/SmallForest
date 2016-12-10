@@ -1,0 +1,190 @@
+page {
+    font-size: 28rpx;
+    background-color: #eee;
+}
+
+.container {
+    overflow-x: hidden;
+}
+
+.sourceTip {
+    padding: 0 20rpx;
+    padding-top: 20rpx;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.tip {
+    display: inline-block;
+    float: left;
+}
+
+.tipIconfont {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background-color: red;
+    vertical-align: middle;
+}
+
+.imList {
+    margin: 20px 0;
+    position: relative;
+}
+
+.time {
+    float: right;
+}
+
+.tipText {
+    vertical-align: middle;
+}
+
+.listContent {
+    padding: 10px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.imTimeTip {
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.imTimeText {
+    padding: 10rpx 30rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.right-avatar,
+.avatar {
+    position: absolute;
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+    background-color: #ccc;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.avatar {
+    left: 0;
+}
+
+.right-avatar {
+    right: 0;
+}
+
+.imContent {
+    /*float: left;*/
+    margin-left: 130rpx;
+}
+
+.message-box {
+    position:relative;
+    /*width:240px;*/
+    padding: 10rpx;
+    background-color:#fff;
+    box-shadow:1px 2px 3px #ccc;
+    border:1px solid #fff;
+    border-radius:4px;
+}
+
+.triangle-border {
+    position:absolute;
+    left:-19px;
+    overflow:hidden;
+    width:0;
+    height:0;
+    border-width:10px;
+    border-style:solid dashed dashed dashed;
+}
+
+.tb-border {
+    top: 19px;
+    border-color: transparent #ccc transparent transparent;
+}
+
+.tb-background {
+    top: 19px;
+    border-color: transparent #fff transparent transparent;
+}
+
+.right-imContent {
+    float: right;
+    margin-right: 140rpx;
+}
+
+.right-triangle-border {
+    position:absolute;
+    right:-19px;
+    overflow:hidden;
+    width:0;
+    height:0;
+    border-width:10px;
+    border-style:solid dashed dashed dashed;
+}
+
+.right-tb-border {
+    top: 19px;
+    border-color: transparent transparent transparent #ccc;
+}
+
+.right-tb-background {
+    top: 19px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.imTime {
+    position:relative;
+    top:-21px;
+    left:-26px;
+}
+
+.right-imTime {
+    position:relative;
+    top:-21px;
+    left:125px;
+}
+
+.iconDist {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    top:-14px;
+    left:-11px;
+}
+
+.right-imTime .iconDist {
+    left: 20px;
+}
+
+.imSelector {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 10rpx 0;
+    background-color: #fff;
+}
+
+.imInput {
+    width: 100%;
+    margin: 0 10rpx;
+    padding: 0 10rpx;
+    border: 1px solid #ccc;
+}
+
+.imImage {
+    margin-left: 10rpx;
+}
