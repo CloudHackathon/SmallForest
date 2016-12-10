@@ -6,4 +6,4 @@ tmp
 .DS_Store
 .idea
 *.rdb
-
+config/default.json

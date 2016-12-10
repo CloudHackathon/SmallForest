@@ -1,0 +1,23 @@
+api:
+  image: sweetvvck/node@env
+  volumes:
+    - .:/app/
+  working_dir: /app/
+  command: bash
+  ports:
+    - "3000:3000"
+  links: 
+    - database
+    - redis
+
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
+
+database:  
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=ping55555
+  ports:
+    - "3306:3306"
