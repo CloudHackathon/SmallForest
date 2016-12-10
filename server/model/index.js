@@ -36,13 +36,8 @@ Topic.hasMany(Room, {
   foreignKey: 'topicId'
 });
 
-Topic.hasMany(Label, {
-  'as': 'labels'
-});
-
-Label.hasMany(Topic, {
-  'as': 'topics'
-});
+Topic.belongsToMany(Label, { as: 'labels', through: 'label_topic', foreignKey: 'topicId' })
+Label.belongsToMany(Topic, { as: 'topics', through: 'label_topic', foreignKey: 'labelId' })
 
 Model.User = User;
 Model.Profile = Profile;
