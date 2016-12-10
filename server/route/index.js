@@ -38,8 +38,11 @@ module.exports = function (app) {
 
   app.use(route.post('/users/:id/topics', user.postTopic));
   app.use(route.post('/topics/:id/rooms', topic.createRoom));
-  app.use(route.post('/rooms/:id/messages', room.createMessage))
+  app.use(route.post('/rooms/:id/messages', room.createMessage));
 
-  app.use(route.delete('/topics/:topicId/rooms/:roomId', topic.deleteRoom))
+  app.use(route.delete('/topics/:topicId/rooms/:roomId', topic.deleteRoom));
+
+  app.use(route.get('/topics/:id', topic.listTopics));
+  app.use(route.get('/users/:id/notices', user.listNotices));
 
 };

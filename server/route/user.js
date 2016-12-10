@@ -19,12 +19,26 @@ module.exports = {
   updateProfile: updateProfile,
   getOwnedTopics: getOwnedTopics,
   getAppliedTopics: getAppliedTopics,
-  postTopic: postTopic
+  postTopic: postTopic,
+  listNotices: listNotices
 };
 
 function* getAppliedTopics(id) {
   this.body = yield userService.getAppliedTopics(id);
 }
+
+
+function* listNotices(id) {
+  if (parseInt(this.session.id) !== parseInt(id)) {
+    throw Exception.create(Exception.Types.Forbidden, '禁止访问他人的通知');
+  }
+  var result = yield userService.listNotices(id);
+  if (!result) {
+    throw Exception.create(Exception.Types.ServerError, '获取话题列表失败');
+  }
+  this.body = result;
+}
+
 
 function* random() {
   var user = yield userService.random();

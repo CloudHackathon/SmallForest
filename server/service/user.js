@@ -7,6 +7,8 @@ var Utils = require('../utils');
 var User = Model.User;
 var Room = Model.Room;
 var Topic = Model.Topic;
+var Label = Model.Label;
+var Notice = Model.Notice;
 var LabelTopic = Model.LabelTopic;
 
 var UserService = module.exports;
@@ -14,8 +16,50 @@ var UserService = module.exports;
 UserService.getOwnedTopics = function(id) {
 
   return Topic
-    .findAll({ where: { ownerId: id }, include: { model: Room, as: 'rooms' } });
+    .findAll({ where: { ownerId: id }, include: { model: Room, as: 'rooms' } })
+    .then(function(topics) {
+      if (!topics || !topics.length) { return []; }
+      var topicIds = topics.map(function(item) {
+        return item.id;
+      });
+      return LabelTopic
+        .findAll({ where: { topicId: topicIds } })
+        .then(function (relations) {
+          if (!relations || !relations.length) {
+            return topics;
+          }
+          var relationMap = {};
+          var labelIds = relations.map(function(relation) {
+            if (!relationMap[relation.topicId]) {
+              relationMap[relation.topicId] = [];
+            }
+            relationMap[relation.topicId].push(relation.labelId);
+            return relation.labelId;
+          });
+          return Label.findAll({
+            where: { id: labelIds }
+          }).then(function(labels) {
+            var tmpMap = {};
+            labels.forEach(function(label) {
+              tmpMap[label.id] = label;
+            });
+            return topics.map(function (topic) {
+              if (!relationMap[topic.id] || !relationMap[topic.id].length) {
+                return topic;
+              }
+              topic.dataValues.labels = relationMap[topic.id].map(function (item) {
+                return tmpMap[item].dataValues;
+              });
+              return topic;
+            });
+          });
+        });
+    });
 
+};
+
+UserService.listNotices = function(userId) {
+  return Notice.findAll({ where: { userId: userId } });
 };
 
 UserService.getAppliedTopics = function(id) {

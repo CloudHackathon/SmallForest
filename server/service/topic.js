@@ -7,6 +7,7 @@ var User = Model.User;
 var Room = Model.Room;
 var Topic = Model.Topic;
 var Notice = Model.Notice;
+var LabelTopic = Model.LabelTopic;
 
 var TopicService = module.exports;
 
@@ -63,3 +64,19 @@ TopicService.deleteRoom = function(topicId, roomId) {
     })
 
 };
+
+TopicService.listTopics = function(labelIds) {
+  LabelTopic.findAll({
+    where: { labelId: labelIds }
+  }).then(function(items) {
+    if (!items || !items.id) {
+      return Promise.reject('未找到对应标签');
+    }
+    var topicIds = items.map(function (item) {
+      return item.topicId;
+    });
+    return Topic.findAll({
+      where: { id: topicIds }
+    });
+  });
+}

@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 
 var sequelize = require('./db.js');
 
-module.exports = sequelize.define('label-topic', {
+module.exports = sequelize.define('label_topic', {
   id: {
     comment: '主键',
     primaryKey: true,
