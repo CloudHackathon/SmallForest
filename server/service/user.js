@@ -7,6 +7,7 @@ var Utils = require('../utils');
 var User = Model.User;
 var Room = Model.Room;
 var Topic = Model.Topic;
+var LabelTopic = Model.LabelTopic;
 
 var UserService = module.exports;
 
@@ -34,7 +35,22 @@ UserService.getAppliedTopics = function(id) {
 };
 
 UserService.postTopic = function(topic) {
-  return Topic.create(topic);
+  var labelIds = topic.labelIds;
+  delete topic.labelIds;
+  return Topic
+    .create(topic)
+    .then(function (result) {
+      if (result && result.id) {
+        var relations = labelIds.map(function (item) {
+          return {
+            labelId: item,
+            topicId: result.id
+          };
+        });
+        LabelTopic.bulkCreate(relations);
+      }
+      return result;
+    });
 };
 
 UserService.random = function() {

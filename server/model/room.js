@@ -30,7 +30,8 @@ module.exports = sequelize.define('room', {
   },
   state: {
     allowNull: true,
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    comment: "房间状态，0表示未申请通过，1表示已申请通过"
   }
 }, {
   underscored: true,

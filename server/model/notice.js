@@ -21,7 +21,8 @@ module.exports = sequelize.define('notice', {
   },
   action: {
     allowNull: true,
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    comment: "用户操作，0表示加入话题，1表示会话关闭，2表示会话超时"
   },
   message: {
     allowNull: true,

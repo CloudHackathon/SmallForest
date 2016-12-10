@@ -40,4 +40,6 @@ module.exports = function (app) {
   app.use(route.post('/topics/:id/rooms', topic.createRoom));
   app.use(route.post('/rooms/:id/messages', room.createMessage))
 
+  app.use(route.delete('/topics/:topicId/rooms/:roomId', topic.deleteRoom))
+
 };

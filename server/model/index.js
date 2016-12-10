@@ -5,6 +5,8 @@ var Label = require('./label');
 var Message = require('./message');
 var Room = require('./room');
 var Topic = require('./topic');
+var Notice = require('./notice');
+var LabelTopic = require('./label-topic');
 
 var Model = exports;
 
@@ -45,5 +47,7 @@ Model.Label = Label;
 Model.Topic = Topic;
 Model.Room = Room;
 Model.Message = Message;
+Model.Notice = Notice;
+Model.LabelTopic = LabelTopic;
 
 Model.sequelize = sequelize;
