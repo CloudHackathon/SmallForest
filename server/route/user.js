@@ -34,7 +34,10 @@ function* random() {
     this.session.email = user.email;
     this.status = 200;
     this.body = {
-        headers: this.response.headers
+        headers: this.response.headers,
+        userId: user.id,
+        username: user.name,
+        email: user.email
     };
   } else {
     throw Exception.create(Exception.Types.UserNotFound, 'User not found.');

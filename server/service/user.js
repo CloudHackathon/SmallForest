@@ -14,7 +14,7 @@ var UserService = module.exports;
 UserService.getOwnedTopics = function(id) {
 
   return Topic
-    .findAll({ where: { ownerId: id } });
+    .findAll({ where: { ownerId: id }, include: { model: Room, as: 'rooms' } });
 
 };
 
