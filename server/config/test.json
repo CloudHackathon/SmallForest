@@ -4,9 +4,9 @@
     "cookieExpire": 3600
   },
   "mysql": {
-    "host": "10.66.135.81",
-    "port": 3306,
-    "user": "root",
+    "host": "584bfa9f89285.bj.cdb.myqcloud.com",
+    "port": 17277,
+    "user": "cdb_outerroot",
     "password": "WxfNTcDemngr92",
     "db": "smallforest",
     "logging": true,
