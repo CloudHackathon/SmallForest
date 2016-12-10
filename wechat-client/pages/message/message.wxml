@@ -1,1 +1,18 @@
-<view>发现</view>
+<view class="wrap01">
+    <view class="messageList">
+        <view class="new current">
+
+            <view class="p01"><i class="iconfontDisc"></i> 新用户加入话题</view>
+            <view class="p02">匿名用户在话题《吐槽我的极品上司》下留言。</view>
+        </view>
+
+        <view class="new">
+            <view class="p01"><i class="iconfontDisc"></i> 话题被关闭</view>
+            <view class="p02">话题《吐槽我的极品上司》被发起人关闭。</view>
+        </view>
+        <view class="new">
+            <view class="p01"><i class="iconfontDisc"></i> 新用户加入话题</view>
+            <view class="p02">匿名用户在话题《吐槽我的极品上司》下留言。</view>
+        </view>
+    </view>
+</view>

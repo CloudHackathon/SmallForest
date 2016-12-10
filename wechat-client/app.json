@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/about/about",
     "pages/im/im",
     "pages/send/send",
     "pages/found/found",

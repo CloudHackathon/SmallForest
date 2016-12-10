@@ -1,1 +1,62 @@
-<view>更多</view>
+<view class="topBox">
+    <view class="imgBox">
+        <image class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
+    </view>
+    <view class="nameBar">没有钱相当真有钱</view>
+    <view class="topicBar">
+        <view class="topicList">
+            <view class="p01">10</view>
+            <view class="p02">发起的话题</view>
+        </view>
+        <view class="topicList">
+            <view class="p01">138</view>
+            <view class="p02">加入的话题</view>
+        </view>
+    </view>
+</view>
+
+<view class="tagBox">
+    <view class="titleBar">我的常用个人属性标签<a href="javascript:void(0)" class="btn modify"></a></view>
+    <view class="content">
+        <view class="tagList">
+            <text class="tagText"> 工作 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 情感 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 程序员 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 工作 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 情感 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 程序员 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 工作 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 情感 </text>
+            <view class="del"></view>
+        </view>
+        <view class="tagList">
+            <text class="tagText"> 程序员 </text>
+            <view class="del"></view>
+        </view>
+    </view>
+</view>
+
+<view class="jumpBar">话题偏好设置<i class="meLabel"></i></view>
+
+<view class="jumpBar">关于<i class="meLabel"></i></view>

@@ -1,0 +1,138 @@
+.topBox{
+    height:260px;
+    padding-top: 40px;
+    background-image: url("http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481387225.jpeg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #B8BEBB;
+}
+.topBox .imgBox{
+    width: 94px;
+    height: 94px;
+    margin: 0 auto;
+}
+.topBox .imgBox .wechat{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 94px;
+    -moz-border-radius: 94px;
+    -webkit-border-radius: 94px;
+}
+.topBox .nameBar{
+    font-size: 18px;
+    margin-top: 14px;
+    text-align: center;
+}
+.topBox .topicBar{
+    position: relative;
+    margin: 40px 40px 0 40px;
+}
+.topicBar {
+    text-align: center;
+}
+.topicList {
+    display: inline-block;
+    margin: 0 60rpx;
+    text-align: center;
+}
+.topicList:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 24px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    right: 162px;
+    top: 4px;
+}
+.topicList .p01 {
+    font-size: 28px;
+    line-height:30px;
+}
+
+.topicList .p02 {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 6px;
+}
+
+.tagBox{
+    padding: 15px 4px 4px 15px;
+    background-color: #fff;
+    color: #787878;
+    margin-top: 15px;
+}
+.tagBox .titleBar{
+    position: relative;
+    height: 26px;
+    line-height: 26px;
+    margin-bottom: 13px;
+    font-size: 14px;
+}
+.tagBox .titleBar .btn{
+    display: block;
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 26px;
+    height:26px;
+    background-image: url("http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481387224.png");
+    background-size: 500px 500px;
+}
+.tagBox .titleBar .btn.modify{
+    background-position: 0 0;
+}
+.tagBox .titleBar .btn.done{
+    background-position: -30px 0;
+}
+
+.tagText {
+    display: inline-block;
+    font-size: 28rpx;
+    padding: 5px 14px;
+    border: #6C6C6C 1px solid;
+    border-radius: 4px;
+}
+
+.tagList {
+    position: relative;
+    display: inline-block;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.del {
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    width: 17px;
+    height: 17px;
+    background-image: url(http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481387224.png);
+    background-size: 500px 500px;
+    background-position: -60px 0;
+}
+
+.jumpBar{
+    margin-top: 15px;
+    background-color: #fff;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    position: relative;
+    color: #787878;
+    font-size: 14px;
+}
+.jumpBar .meLabel{
+    display: block;
+    width: 7px;
+    height:14px;
+    background-image: url(http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481387224.png);
+    background-size: 500px 500px;
+    background-position: -10px -50px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}

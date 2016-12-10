@@ -14,6 +14,19 @@
     border: 1px solid #00bfbe;
 }
 
+.mood {
+    display: block;
+    width: 76rpx;
+    float: left;
+    padding: 0 15rpx;
+    background-color: #fff;
+}
+
+.mood .icon-xiaolian {
+    color: #00bfbe;
+    font-size: 48rpx;
+}
+
 .send {
     width: 100%;
     text-align: center;

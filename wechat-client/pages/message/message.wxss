@@ -1,0 +1,40 @@
+.wrap01 {
+    font-size: 32rpx;
+    margin-top: 20rpx;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.new {
+    margin-left: 20rpx;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.new:last-child {
+    border-bottom: none;
+}
+
+.new .iconfontDisc {
+    background-color: rgb(0, 189, 188);
+}
+
+.p01 {
+    font-size: 32rpx;
+}
+
+.p02 {
+    font-size: 28rpx;
+    padding-left: 21px;
+    padding-top: 10rpx;
+}
+
+.iconfontDisc {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: rgb(155, 155, 155);
+    border-radius: 16px;
+    vertical-align: middle;
+}
