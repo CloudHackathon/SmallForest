@@ -14,7 +14,7 @@
 <view class="container wrap" wx:for="{{messages}}">
 
     <view class="imList clearBox" wx:if="{{ userId == item.senderId }}">
-        <image class="avatar" mode="" src=""></image>
+        <image class="avatar" mode="" src="{{ item.avatar }}"></image>
 
         <view class="imContent">
             <view class="message-box">
@@ -26,7 +26,7 @@
     </view>
 
     <view class="imList clearBox" wx:if="{{ userId != item.senderId }}">
-        <image class="right-avatar" mode="" src=""></image>
+        <image class="right-avatar" mode="" src="{{ item.avatar }}"></image>
 
         <view class="right-imContent">
             <view class="message-box">

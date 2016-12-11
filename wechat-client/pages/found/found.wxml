@@ -16,21 +16,21 @@
     </view>
 
     <view class="content">
-        <view class="list">
+        <view class="list" wx:for="{{topics}}" wx:for-item="topic" wx:for-index="idx" bindtap="enterIMpage" id="{{topic.id}}" data-topic-content="{{ topic.content }}">
             <view class="clearBox">
-                <view class="tip" style="margin-bottom: 20rpx;"><i class="tipText">— 工作 —</i></view>
-                <text class="time">2016-12-10</text>
+                <view class="tip" style="margin-bottom: 20rpx;"><i class="tipText">— {{ !topic.labels[0].name ? '其他':topic.labels[0].name }} —</i></view>
+                <text class="time">{{ topic.date }}</text>
             </view>
 
             <view class="listContent">
-                这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题
+                {{ topic.content }}
             </view>
 
-            <view class="watchList clearBox">
+            <view class="watchList clearBox" wx:for="{{topic.rooms}}" wx:for-item="room">
                 <image class="avatar" mode="" src=""></image>
 
                 <view class="tipStyle">
-                    <text class="chatInfo"> 这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题 </text>
+                    <text class="chatInfo"> {{ topic.content }} </text>
                     <view class="styleList">
                         <text class="styleItem">设计师</text>
                         <text class="styleItem">设计师</text>
@@ -41,51 +41,6 @@
 
                 <image class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
                 <view class="disc"></view>
-            </view>
-
-            <view class="watchList clearBox">
-                <image class="avatar" mode="" src=""></image>
-
-                <view class="tipStyle">
-                    <text class="chatInfo"> 这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题 </text>
-                    <view class="styleList">
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
-                        <text class="etc">...</text>
-                    </view>
-                </view>
-
-                <image class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
-                <view class="disc"></view>
-            </view>
-        </view>
-
-        <view class="list">
-            <view class="watchList clearBox">
-                <image class="avatar" mode="" src=""></image>
-
-                <view class="tipStyle">
-                    <text class="chatInfo"> 这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题 </text>
-                    <view class="styleList">
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
-                        <text class="etc">...</text>
-                    </view>
-                </view>
-
-                <image class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
-                <view class="disc"></view>
-            </view>
-
-            <view class="clearBox" style="margin-top: 20rpx; margin-bottom: 20rpx;">
-                <view class="tip"><i class="tipText">— 工作 —</i></view>
-                <text class="time">2016-12-10</text>
-            </view>
-
-            <view class="listContent" style="padding-bottom: 20rpx;">
-                这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题
             </view>
 
         </view>

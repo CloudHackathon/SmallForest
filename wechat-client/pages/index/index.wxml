@@ -16,7 +16,7 @@
             <navigator class="listContent moreContent" url="../detail/detail?content={{topic.content}}&id={{topic.id}}&label={{ !topic.labels[0].name ? '其他':topic.labels[0].name }}&time={{topic.date}}&topicId={{topic.labels[0].id}}" hover-class="navigator-hover">{{topic.content}}</navigator>
 
             <view class="watchList clearBox" wx:for="{{topic.rooms}}" wx:for-item="room">
-                <image class="avatar" mode="" src=""></image>
+                <image class="avatar" src="{{room.avatar}}"></image>
 
                 <view class="tipStyle">
                     <text class="chatInfo"> {{topic.content}} </text>

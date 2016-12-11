@@ -21,6 +21,13 @@ Page({
             tab: +e.currentTarget.id
         });
     },
+
+    generateAvatar(id) {
+        var path = '../../images/avatar/t' + (id%5 + 1) + '.jpg';
+        console.log('path is: ', path);
+        return path;
+    },
+
     getOwnedTopics() {
         var self = this;
         var email = wx.getStorageSync('email');
@@ -33,10 +40,16 @@ Page({
                 'Cookie': cookies
             },
             success: function(res) {
-                res.data.forEach((element) => {
-                    element.date = new Date(element.created_at).toLocaleString().slice(0, 7);
+                res.data.forEach((topic) => {
+                    topic.date = new Date(topic.created_at).toLocaleString().slice(0, 7);
+                    if (topic.rooms && topic.rooms.length) {
+                      topic.rooms = topic.rooms.map(function (item) {
+                        item.avatar = self.generateAvatar(item.id);
+                        return item;
+                      });
+                    }
                 });
-
+                res.data.reverse();
                 self.setData({'topics': res.data});
             }
         });
@@ -56,7 +69,7 @@ Page({
                 res.data.forEach((element) => {
                     element.date = new Date(element.created_at).toLocaleString().slice(0, 7);
                 });
-
+                res.data.reverse();
                 self.setData({'appliedTopics': res.data});
             }
         });

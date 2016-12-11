@@ -13,6 +13,7 @@ Page({
                 'Cookie': cookies
             },
             success: function (res) {
+                res.data.reverse();
                 self.setData({'lists': res.data});
             }
         });

@@ -6,6 +6,11 @@ Page({
         value: '',
         roomId: 0
     },
+    generateAvatar(id) {
+        var path = '../../images/avatar/t' + (id%5 + 1) + '.jpg';
+        console.log('path is: ', path);
+        return path;
+    },
     getMessages(roomId) {
         var self = this;
         var userId = wx.getStorageSync('userId');
@@ -17,6 +22,12 @@ Page({
             },
             url: 'http://sweetvvck.com:3000/rooms/' + roomId + '/messages',
             success: function(res) {
+                var messages = res.data;
+                if (messages && messages.length) {
+                  messages = messages.map(function(item) {
+                    item.avatar = self.generateAvatar(item.id);
+                  });
+                }
                 self.setData({'messages': res.data});
             }
         });
@@ -50,7 +61,7 @@ Page({
         var self = this;
         var userId = wx.getStorageSync('userId');
         var data = JSON.parse(options.data);
-        var topicsId = data.topicsId;
+        var topicId = data.topicId;
         var roomId = data.roomId;
         console.log(data);
         this.setData({'topicContent': data.topicContent})
