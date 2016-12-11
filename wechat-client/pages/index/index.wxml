@@ -7,13 +7,13 @@
     <navigator class="goForest" url="../send/send" hover-class="navigator-hover">+ 来树洞森林吐个槽吧</navigator>
 
     <view class="content" hidden="{{ tab }}">
-        <view class="list" wx:for="{{topics}}" wx:for-item="topic">
+        <view class="list" wx:for="{{topics}}" wx:for-item="topic" wx:for-index="idx">
             <view class="clearBox">
                 <view class="tip" style="margin-bottom: 20rpx;"><i class="tipText">— 工作 —</i></view>
-                <text class="time">2016-12-10</text>
+                <text class="time">{{ topic.date }}</text>
             </view>
 
-            <view class="listContent">
+            <view class="listContent moreContent">
                 {{topic.content}}
             </view>
 
@@ -38,34 +38,36 @@
                 <view class="disc"></view>
             </view>
         </view>
+
+        <image hidden="labels.length" src="../../images/logo.png" style="margin: 0 auto; margin-top: 200rpx;display: block; width: 200rpx; height: 260rpx;"></image>
     </view>
+
+
     <view class="content" hidden="{{ !tab }}" >
         <view class="list">
             <view class="watchList clearBox">
-                <image class="avatar" mode="" src=""></image>
+                <image class="avatar" mode="" src="../../images/avatar/t1.png"></image>
 
                 <view class="tipStyle">
-                    <text class="chatInfo"> 这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题 </text>
+                    <text class="chatInfo"> 请问大家介意跟情侣住而且养狗吗？ </text>
                     <view class="styleList">
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
+                        <text class="styleItem">室友</text>
+                        <text class="styleItem">宠物</text>
+                        <text class="styleItem">声音</text>
                         <text class="etc">...</text>
                     </view>
                 </view>
-                <navigator class="wechat" url="../im/im?" redirect>
-                    <image src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
-                </navigator>
+                <image class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
                 <view class="disc"></view>
             </view>
 
             <view class="clearBox" style="margin-top: 20rpx; margin-bottom: 20rpx;">
-                <view class="tip"><i class="tipText">— 工作 —</i></view>
+                <view class="tip"><i class="tipText">— 情侣吐槽 —</i></view>
                 <text class="time">2016-12-10</text>
             </view>
 
-            <view class="listContent" style="padding-bottom: 20rpx;">
-                这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题
+            <view class="listContent" style="padding-bottom: 30rpx;line-height: 1.5;">
+                新室友是一对儿情侣，好在基本上每天他们都窝在自己的小屋里不出来，蛮安静，也比之前的姑娘稍微注意一点卫生。 但是！他们养狗啊！
             </view>
 
         </view>

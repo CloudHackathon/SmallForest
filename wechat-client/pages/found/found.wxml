@@ -1,23 +1,16 @@
 <view class="container">
-
     <view class="foundLabel">
         <view class="wrap">
             <text class="title"> 内容类别 </text>
 
             <view class="labelList">
-                <text class="listItem"> 工作 </text>
-                <text class="listItem"> 情感 </text>
-                <text class="listItem"> 家庭 </text>
-                <text class="listItem"> 健康 </text>
-                <text class="listItem current"> 其他 </text>
+                <text wx:for="{{labels}}" wx:key="idx" wx:for-index="idx" wx:for-item="label" class="listItem {{ tab == label.id ? 'current' : '' }}" bindtap="selectLabel" id="{{label.id}}"> {{label.name}} </text>
             </view>
 
             <text class="title"> 发起人标签 </text>
 
             <view class="labelList">
-                <text class="listItem"> 程序猿 </text>
-                <text class="listItem"> 加班 </text>
-                <text class="listItem current"> 八卦 </text>
+                <text wx:for="{{sponSorLabels}}" wx:key="idx" wx:for-index="idx" wx:for-item="sponsorLabel" class="listItem {{ sponsorTab == sponsorLabel.id ? 'current' : '' }}" bindtap="selectsSponsorLabel" id="{{sponsorLabel.id}}"> {{sponsorLabel.name}} </text>
             </view>
         </view>
     </view>

@@ -15,33 +15,33 @@
     "navigationBarTextStyle":"#fff"
   },
   "tabBar": {
-    "color":"#52668C",
-    "selectedColor":"#3378DD",
+    "color":"#7a7183",
+    "selectedColor":"#00bdbc",
     "backgroundColor":"#fff",
     "borderStyle":"white",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
-      "iconPath": "images/tabbar/common_icon_quote_normal.png",
-      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+      "iconPath": "images/tabbar/1.png",
+      "selectedIconPath": "images/tabbar/5.png"
     },
     {
       "pagePath": "pages/found/found",
       "text": "发现",
-      "iconPath": "images/tabbar/common_icon_quote_normal.png",
-      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+      "iconPath": "images/tabbar/2.png",
+      "selectedIconPath": "images/tabbar/6.png"
     },
     {
       "pagePath": "pages/message/message",
       "text": "消息",
-      "iconPath": "images/tabbar/common_icon_quote_normal.png",
-      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+      "iconPath": "images/tabbar/3.png",
+      "selectedIconPath": "images/tabbar/7.png"
     },
     {
       "pagePath": "pages/more/more",
       "text": "更多",
-      "iconPath": "images/tabbar/common_icon_quote_normal.png",
-      "selectedIconPath": "images/tabbar/common_icon_quote_pressed.png"
+      "iconPath": "images/tabbar/4.png",
+      "selectedIconPath": "images/tabbar/8.png"
     }]
   }
 }

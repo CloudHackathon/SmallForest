@@ -136,3 +136,7 @@
     right: 15px;
     top: 15px;
 }
+
+.tagBox .titleBar .btn.done{
+    background-position: -30px 0;
+}

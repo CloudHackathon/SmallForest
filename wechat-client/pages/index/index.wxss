@@ -60,16 +60,21 @@ page {
 
 .time {
     float: right;
+    font-size: 24rpx;
     color: #a3a3a3;
 }
 
 .tipText {
     color: #f05462;
+    font-size: 24rpx;
     vertical-align: middle;
 }
 
 .listContent {
     padding-bottom: 10px;
+}
+
+.moreContent {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -87,7 +92,7 @@ page {
 
 .chatInfo {
     color: #787878;
-    padding-bottom: 10rpx;
+    padding-bottom: 16rpx;
 }
 
 .tipStyle {
