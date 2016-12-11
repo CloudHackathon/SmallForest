@@ -35,12 +35,12 @@ function* deleteRoom(topicId, roomId) {
 
 function* listTopics() {
   var lableIdStr = this.request.query.labelIds;
-  if (!lableIdStr) {
-    throw Exception.create(Exception.Types.BadRequest, '参数错误');
+  var labelIds = [];
+  if (lableIdStr) {
+    labelIds = lableIdStr.split(',').map(function (item) {
+      return item.trim();
+    });
   }
-  var labelIds = lableIdStr.split(',').map(function (item) {
-    return item.trim();
-  });
   var result = yield topicService.listTopics(labelIds);
   if (!result) {
     throw Exception.create(Exception.Types.ServerError, '获取话题列表失败');

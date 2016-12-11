@@ -66,7 +66,10 @@ TopicService.deleteRoom = function(topicId, roomId) {
 };
 
 TopicService.listTopics = function(labelIds) {
-  LabelTopic.findAll({
+  if(!labelIds && !labelIds.length) {
+    return Topic.findAll();
+  }
+  return LabelTopic.findAll({
     where: { labelId: labelIds }
   }).then(function(items) {
     if (!items || !items.id) {
