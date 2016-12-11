@@ -7,7 +7,7 @@ var bind = function (app) {
   app.use(session({
     store: store(),
     cookie: {
-      maxage: sessionStore.cookieExpire
+      maxAge: sessionStore.cookieExpire
     }
   }));
 };

@@ -78,7 +78,7 @@ UserService.getAppliedTopics = function(id) {
     var topicIds = rooms.map(function (item) {
       return item.topicId
     });
-    return Topic.findAll({ where: { id: topicIds } });
+    return Topic.findAll({ where: { id: topicIds }, include: { model: Room, as: 'rooms' } });
   });
 };
 
@@ -105,7 +105,7 @@ UserService.random = function() {
 
   var user = {
     email: Utils.random(8) + '@smail.forest',
-    password: 12345678,
+    password: '12345678',
     name: randomName.generate()
   };
 

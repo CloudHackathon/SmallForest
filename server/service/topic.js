@@ -72,7 +72,7 @@ TopicService.listTopics = function(labelIds) {
   return LabelTopic.findAll({
     where: { labelId: labelIds }
   }).then(function(items) {
-    if (!items || !items.id) {
+    if (!items || !items.length) {
       return Promise.reject('未找到对应标签');
     }
     var topicIds = items.map(function (item) {

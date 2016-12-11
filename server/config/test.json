@@ -1,7 +1,7 @@
 {
   "session": {
     "store": "redis",
-    "cookieExpire": 86400
+    "cookieExpire": 86400000
   },
   "mysql": {
     "host": "584bfa9f89285.bj.cdb.myqcloud.com",
