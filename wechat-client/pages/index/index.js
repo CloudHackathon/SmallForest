@@ -3,7 +3,8 @@ const moment = require('../../modules/moment');
 Page({
     data: {
         tab: 0,
-        topics: []
+        topics: [],
+        appliedTopics: []
     },
     enterIMpage(event) {
         var data = event.target.dataset;
@@ -15,44 +16,17 @@ Page({
         });
     },
     selectIndexTab(e) {
-        console.log(e);
         this.setData({
             tab: +e.currentTarget.id
         });
     },
-    startRecord() {
-        console.log(123);
-        wx.startRecord({
-          success: function(res) {
-            var tempFilePath = res.tempFilePath
-            console.log(tempFilePath);
-          },
-          fail: function(res) {
-             console.log('fail:', res);
-          },
-          complete:function(res) {
-            console.log(res);
-          }
-        })
-        setTimeout(function() {
-          // 结束录音
-          wx.stopRecord()
-        }, 1000)
-    },
-    playRecord() {
-        wx.startRecord({
-          success: function(res) {
-            var tempFilePath = res.tempFilePath
 
-            console.log(tempFilePath);
-            wx.playVoice({
-              filePath: tempFilePath,
-              complete: function(){
-              }
-            })
-          }
-        })
+    generateAvatar(id) {
+        var path = '../../images/avatar/t' + (id%5 + 1) + '.jpg';
+        console.log('path is: ', path);
+        return path;
     },
+
     getOwnedTopics() {
         var self = this;
         var email = wx.getStorageSync('email');
@@ -65,29 +39,37 @@ Page({
                 'Cookie': cookies
             },
             success: function(res) {
+                res.data.forEach((topic) => {
+                    topic.date = new Date(topic.created_at).toLocaleString().slice(0, 7);
+                    if (topic.rooms && topic.rooms.length) {
+                      topic.rooms = topic.rooms.map(function (item) {
+                        item.avatar = self.generateAvatar(item.id);
+                        return item;
+                      });
+                    }
+                });
+                res.data.reverse();
+                self.setData({'topics': res.data});
+            }
+        });
+    },
+    getAppliedTopics() {
+        var self = this;
+        var email = wx.getStorageSync('email');
+        var userId = wx.getStorageSync('userId');
+        var cookies = wx.getStorageSync('cookies');
+        wx.request({
+            method: 'GET',
+            url: 'http://sweetvvck.com:3000/users/' + userId + '/topics/applied',
+            header: {
+                'Cookie': cookies
+            },
+            success: function(res) {
                 res.data.forEach((element) => {
                     element.date = new Date(element.created_at).toLocaleString().slice(0, 7);
                 });
-
-                self.setData({'topics': res.data});
-            },
-            fail: function () {
-                console.log(arguments);
-                wx.request({
-                    method: 'POST',
-                    url: 'http://sweetvvck.com:3000/auth/login',
-                    data: {
-                        email: email,
-                        password: '12345678'
-                    },
-                    success: function(res) {
-                        var response = res.data;
-                        wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
-
-                        self.getOwnedTopics();
-                    }
-                })
-
+                res.data.reverse();
+                self.setData({'appliedTopics': res.data});
             }
         });
     },
@@ -109,20 +91,7 @@ Page({
         var userId = wx.getStorageSync('userId');
         var email = wx.getStorageSync('email');
         var cookies = wx.getStorageSync('cookies');
-        // wx.request({
-        //     method: 'POST',
-        //     url: 'http://sweetvvck.com:3000/auth/login',
-        //     data: {
-        //         email: email,
-        //         password: '12345678'
-        //     },
-        //     success: function(res) {
-        //         var response = res.data;
-        //         wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
-        //
-        //         self.getOwnedTopics();
-        //     }
-        // });
+
         if (!userId || !cookies) {
             wx.request({
                 method: 'POST',
@@ -136,12 +105,27 @@ Page({
                     wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
 
                     self.getOwnedTopics();
+                    self.getAppliedTopics();
                 }
             });
         } else {
             console.log('已登录');
             console.log('用户Id是： ', userId);
-            self.getOwnedTopics();
+            wx.request({
+                method: 'POST',
+                url: 'http://sweetvvck.com:3000/auth/login',
+                data: {
+                    email: email,
+                    password: '12345678'
+                },
+                success: function(res) {
+                    var response = res.data;
+                    wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
+
+                    self.getOwnedTopics();
+                    self.getAppliedTopics();
+                }
+            });
         }
 
     }

@@ -1,71 +1,71 @@
 <view class="sourceTip">
-    <view class="clearBox">
-        <view class="tip"> <i class="tipText">来源话题</i></view>
-        <text class="time">2016-12-10</text>
+    <view class="clearBox" style="margin: 0 20rpx;">
+        <view class="tip" style="color: #717e71;"> <i class="tipText">来源话题</i></view>
+        <text class="time" style="margin: 0 20rpx; color: #717e71;">2016/12</text>
     </view>
 
-    <view class="listContent">
+    <view class="listContent" style="padding: 20rpx;color: #717e71;">
         {{ topicContent }}
     </view>
+
 </view>
 
-<view class="imTimeTip"><text class="imTimeText"> 只能看24小时内的留言哦 </text></view>
+<view class="imTimeTip" style="padding-top: 50px;"><text class="imTimeText"> 只能看24小时内的留言哦 </text></view>
 
-<view class="container wrap" wx:for="{{messages}}">
-
-    <view class="imList clearBox" wx:if="{{ userId == item.senderId }}">
-        <image class="avatar" mode="" src=""></image>
-
-        <view class="imContent">
-            <view class="message-box">
-                <text>{{item.text}}</text>
-                <view class="triangle-border tb-border"></view>
-                <view class="triangle-border tb-background"></view>
+    <view class="imList clearBox" wx:if="{{ userId == item.senderId }}" style="padding-bottom: 50rpx; margin-top: 14px; height: 480px;overflow-x: hidden;">
+        <image class="avatar" mode="" src="{{ item.avatar }}"></image>
+            <view class="imContent">
+                <view class="message-box">
+                    <text>{{item.text}}</text>
+                    <view class="triangle-border tb-border"></view>
+                    <view class="triangle-border tb-background"></view>
+                </view>
             </view>
         </view>
-    </view>
 
     <view class="imList clearBox" wx:if="{{ userId != item.senderId }}">
-        <image class="right-avatar" mode="" src=""></image>
-
-        <view class="right-imContent">
-            <view class="message-box">
-                <text>{{item.text}}</text>
-                <view class="right-triangle-border right-tb-border"></view>
-                <view class="right-triangle-border right-tb-background"></view>
+        <image class="right-avatar" mode="" src="{{ item.avatar }}"></image>
+            <view class="right-imContent">
+                <view class="message-box">
+                    <text>{{item.text}}</text>
+                    <view class="right-triangle-border right-tb-border"></view>
+                    <view class="right-triangle-border right-tb-background"></view>
+                </view>
             </view>
         </view>
+
+        <!-- <view class="imList clearBox">
+            <image class="avatar" mode="" src=""></image>
+            <view class="imContent">
+                <view class="message-box" style="height: 34px; width: 100px; top: 8px;">
+                    <view class="triangle-border tb-border" style="top: 10px;"></view>
+                    <view class="triangle-border tb-background" style="top: 10px;"></view>
+                </view>
+
+                <view class="imTime right-imTime"> 2 ” <i class="iconDist"></i></view>
+            </view>
+
+        </view>
+
+        <view class="imList clearBox">
+            <image class="right-avatar" mode="" src=""></image>
+            <view class="right-imContent">
+                <view class="message-box" style="height: 34px; width: 100px; top: 8px;">
+                    <view class="right-triangle-border right-tb-border" style="top: 10px;"></view>
+                    <view class="right-triangle-border right-tb-background" style="top: 10px;"></view>
+                </view>
+
+                <view class="imTime"> 2 ” <i class="iconDist"></i></view>
+            </view>
+        </view> -->
     </view>
-
-    <!-- <view class="imList clearBox">
-        <image class="avatar" mode="" src=""></image>
-        <view class="imContent">
-            <view class="message-box" style="height: 34px; width: 100px; top: 8px;">
-                <view class="triangle-border tb-border" style="top: 10px;"></view>
-                <view class="triangle-border tb-background" style="top: 10px;"></view>
-            </view>
-
-            <view class="imTime right-imTime"> 2 ” <i class="iconDist"></i></view>
-        </view>
-
-    </view>
-
-    <view class="imList clearBox">
-        <image class="right-avatar" mode="" src=""></image>
-        <view class="right-imContent">
-            <view class="message-box" style="height: 34px; width: 100px; top: 8px;">
-                <view class="right-triangle-border right-tb-border" style="top: 10px;"></view>
-                <view class="right-triangle-border right-tb-background" style="top: 10px;"></view>
-            </view>
-
-            <view class="imTime"> 2 ” <i class="iconDist"></i></view>
-        </view>
-    </view> -->
 </view>
 
 <view class="imSelector">
-    <image mode="" src="../../../images/tabbar/common_icon_quote_normal.png" style="width: 30px; height: 30px; background-color: #ccc;"></image>
-    <input class="imInput" type="input" name="" style="" />
-    <image mode="" src="../../../images/tabbar/common_icon_quote_normal.png" style="width: 30px; height: 30px; background-color: #ccc;"></image>
-    <image class="imImage" mode="" src="../../../images/tabbar/common_icon_quote_normal.png" style="width: 30px; height: 30px; background-color: #ccc;"></image>
+    <image mode="" src="../../../images/smail.png" style="width: 44px; height: 30px; background-color: #ccc;margin-left: 10px;"></image>
+    <input class="imInput" type="input" value="{{ value }}" bindblur="contentBlur" style="width: 80%;margin-top: 1px;" />
+
+    <view style="width:42px; line-height: 18px;text-align: center; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px;" bindtap="sendMessage">发送</view>
+
+    <image class="imImage" mode="" src="../../../images/voice.png" style="width: 43px; height: 30px; background-color: #ccc; margin-right: 10px;"></image>
 </view>
