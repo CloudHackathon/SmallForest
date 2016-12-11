@@ -21,9 +21,9 @@ Page({
                 'Cookie': cookies
             },
             success: function (res) {
-                res.data.reverse();
-                self.setData({'tab': res.data[0].id});
-                self.setData({'sponsorTab': res.data[0].id});
+                // res.data.reverse();
+                // self.setData({'tab': res.data[0].id});
+                // self.setData({'sponsorTab': res.data[0].id});
                 self.setData({'topics': res.data});
             }
         });
@@ -80,6 +80,8 @@ Page({
     },
     selectLabel(e) {
         let label = +e.currentTarget.id;
+
+        console.log('label:', label);
         this.data.selection = label;
         this.setData({'tab': label});
         this.getTopicList();
@@ -111,7 +113,7 @@ Page({
                 'Cookie': cookies
             },
             success: function (res) {
-                res.data.reverse();
+                // res.data.reverse();
                 self.setData({'tab': res.data[0].id});
                 self.setData({'sponsorTab': res.data[0].id});
                 self.setData({'topics': res.data});
