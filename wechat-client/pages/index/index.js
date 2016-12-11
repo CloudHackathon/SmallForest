@@ -109,20 +109,7 @@ Page({
         var userId = wx.getStorageSync('userId');
         var email = wx.getStorageSync('email');
         var cookies = wx.getStorageSync('cookies');
-        // wx.request({
-        //     method: 'POST',
-        //     url: 'http://sweetvvck.com:3000/auth/login',
-        //     data: {
-        //         email: email,
-        //         password: '12345678'
-        //     },
-        //     success: function(res) {
-        //         var response = res.data;
-        //         wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
-        //
-        //         self.getOwnedTopics();
-        //     }
-        // });
+
         if (!userId || !cookies) {
             wx.request({
                 method: 'POST',
@@ -141,7 +128,20 @@ Page({
         } else {
             console.log('已登录');
             console.log('用户Id是： ', userId);
-            self.getOwnedTopics();
+            wx.request({
+                method: 'POST',
+                url: 'http://sweetvvck.com:3000/auth/login',
+                data: {
+                    email: email,
+                    password: '12345678'
+                },
+                success: function(res) {
+                    var response = res.data;
+                    wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
+
+                    self.getOwnedTopics();
+                }
+            });
         }
 
     }
