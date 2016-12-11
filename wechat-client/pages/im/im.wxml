@@ -10,10 +10,12 @@
 
 </view>
 
-<view class="imTimeTip" style="padding-top: 50px;"><text class="imTimeText"> 只能看24小时内的留言哦 </text></view>
+<view class="imTimeTip" style="padding-top: 60px;"><text class="imTimeText"> 只能看24小时内的留言哦 </text></view>
 
-    <view class="imList clearBox" wx:if="{{ userId == item.senderId }}" style="padding-bottom: 50rpx; margin-top: 14px; height: 480px;overflow-x: hidden;">
-        <image class="avatar" mode="" src="{{ item.avatar }}"></image>
+<view style="padding-bottom: 50rpx; margin-top: 14px; height: 480px;overflow-x: hidden;">
+    <view class="container wrap" wx:for="{{messages}}" >
+        <view class="imList clearBox" wx:if="{{ userId == item.senderId }}">
+            <image class="avatar" mode="" src="{{ item.avatar }}"></image>
             <view class="imContent">
                 <view class="message-box">
                     <text>{{item.text}}</text>
