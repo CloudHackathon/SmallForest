@@ -5,6 +5,7 @@
     padding: 20rpx;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    background-color: #fff;
 }
 
 .tip {
@@ -24,10 +25,19 @@
 
 .time {
     float: right;
+    font-size: 24rpx;
+    color: #a3a3a3;
 }
 
 .tipText {
+    color: #f05462;
+    font-size: 24rpx;
     vertical-align: middle;
+}
+
+.primary {
+    color: #fff;
+    background-color: #00bdbc;
 }
 
 .content {

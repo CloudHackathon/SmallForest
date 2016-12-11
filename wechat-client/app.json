@@ -6,7 +6,8 @@
     "pages/send/send",
     "pages/found/found",
     "pages/message/message",
-    "pages/more/more"
+    "pages/more/more",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
