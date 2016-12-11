@@ -20,7 +20,7 @@
   "redis": {
     "host": "10.66.185.55",
     "port": 6379,
-    "auth_pass": "oBLK4bHTyFn8WR"
+    "auth_pass": "crs-osihcne3:oBLK4bHTyFn8WR"
   },
   "auth": {
     "authedIpReg": ""
