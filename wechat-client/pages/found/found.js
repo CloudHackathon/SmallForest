@@ -1,12 +1,12 @@
-let res = [{"id":1,"name":"工作","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":2,"name":"生活","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":3,"name":"情感","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":4,"name":"123","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"}]
-let sponsorRes = [{"id":1,"name":"工作","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":2,"name":"生活","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":3,"name":"情感","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":4,"name":"123","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"}]
+// let res = [{"id":1,"name":"工作","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":2,"name":"生活","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":3,"name":"情感","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":4,"name":"123","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"}]
+// let sponsorRes = [{"id":1,"name":"工作","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":2,"name":"生活","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":3,"name":"情感","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"},{"id":4,"name":"123","parentId":0,"created_at":"2016-12-11T05:11:11.000Z","updated_at":"2016-12-11T05:11:11.000Z"}]
 
 Page({
     data: {
         tab: '',
         sponsorTab: '',
-        labels: res,
-        sponSorLabels: sponsorRes,
+        labels: '',
+        sponSorLabels: '',
         labelArr: [],
         labelSponsorArr: []
     },
@@ -39,24 +39,17 @@ Page({
         this.setData({'sponsorTab': sponsorLabel});
     },
     onLoad(e) {
-        // let cookies = wx.getStorageSync('cookies');
-        // wx.request({
-        //     method: 'POST',
-        //     url: 'http://sweetvvck.com:3000/users/' + this.data.userId + '/topics',
-        //     header: {
-        //         'Cookie': cookies
-        //     },
-        //     data: {
-        //         'content' : this.data.value,
-        //         'ownerId' : this.data.userId,
-        //         'labelIds': this.data.labelArr
-        //     },
-        //     success: function (res) {
+        let cookies = wx.getStorageSync('cookies');
+        wx.request({
+            url: 'http://sweetvvck.com:3000/topics?labelIds=',
+            header: {
+                'Cookie': cookies
+            },
+            success: function (res) {
+                this.setData({'tab': res.data[0].id});
+                this.setData({'sponsorTab': res.data[0].id});
+            }
+        });
 
-        //     }
-        // });
-
-        this.setData({'tab': res[0].id});
-        this.setData({'sponsorTab': res[0].id});
     }
 });

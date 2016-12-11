@@ -1,12 +1,12 @@
 <view class="detail">
-    <view class="clearBox">
-        <view class="tip"><i class="tipIconfont"></i> <i class="tipText">工作</i></view>
-        <text class="time">2016-12-10</text>
+    <view class="clearBox" style="margin-top: 20rpx; margin-bottom: 20rpx;">
+        <view class="tip"><i class="tipText">— {{ label }} —</i></view>
+        <text class="time">{{ time }}</text>
     </view>
 
     <view class="content">
-        我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容我是内容内容
+        {{ content }}
     </view>
 </view>
 
-<button class="btn">结束话题</button>
+<button class="btn primary" bindtap="deleteTopic">结束话题</button>
