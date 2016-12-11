@@ -65,7 +65,11 @@
 
 <view class="imSelector">
     <image mode="" src="../../../images/tabbar/common_icon_quote_normal.png" style="width: 30px; height: 30px; background-color: #ccc;"></image>
-    <input class="imInput" type="input" name="" style="" />
-    <image mode="" src="../../../images/tabbar/common_icon_quote_normal.png" style="width: 30px; height: 30px; background-color: #ccc;"></image>
+    <input class="imInput" type="input" value="{{ value }}" bindblur="contentBlur" name="" style="" />
+    <image
+      mode=""
+      bindtap="sendMessage"
+      src="../../../images/tabbar/common_icon_quote_normal.png"
+      style="width: 30px; height: 30px; background-color: #ccc;"></image>
     <image class="imImage" mode="" src="../../../images/tabbar/common_icon_quote_normal.png" style="width: 30px; height: 30px; background-color: #ccc;"></image>
 </view>
