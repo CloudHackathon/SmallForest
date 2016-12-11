@@ -63,7 +63,7 @@ UserService.getOwnedTopics = function(id) {
 };
 
 UserService.listNotices = function(userId) {
-  return Notice.findAll({ where: { userId: userId } });
+  return Notice.findAll({ where: { userId: userId }, include: { model: Topic, as: 'topic'} });
 };
 
 UserService.getAppliedTopics = function(id) {

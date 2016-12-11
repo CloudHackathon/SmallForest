@@ -41,6 +41,10 @@ Topic.hasMany(Room, {
 Topic.belongsToMany(Label, { as: 'labels', through: 'label_topic', foreignKey: 'topicId' })
 Label.belongsToMany(Topic, { as: 'topics', through: 'label_topic', foreignKey: 'labelId' })
 
+Notice.belongsTo(Topic, {
+  foreignKey: 'topicId'
+});
+
 Model.User = User;
 Model.Profile = Profile;
 Model.Label = Label;

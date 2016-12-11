@@ -43,7 +43,6 @@ function* listNotices(id) {
   this.body = result;
 }
 
-
 function* random() {
   var user = yield userService.random();
   if (user) {
