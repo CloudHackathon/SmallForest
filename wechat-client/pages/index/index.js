@@ -119,7 +119,7 @@ Page({
         //     success: function(res) {
         //         var response = res.data;
         //         wx.setStorageSync('cookies', response.headers['set-cookie'].join(';'));
-
+        //
         //         self.getOwnedTopics();
         //     }
         // });
@@ -141,7 +141,7 @@ Page({
         } else {
             console.log('已登录');
             console.log('用户Id是： ', userId);
-            // self.getOwnedTopics();
+            self.getOwnedTopics();
         }
 
     }

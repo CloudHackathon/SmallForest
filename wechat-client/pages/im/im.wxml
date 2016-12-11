@@ -11,8 +11,9 @@
 
 <view class="imTimeTip"><text class="imTimeText"> 只能看24小时内的留言哦 </text></view>
 
-<view class="container wrap">
-    <view class="imList clearBox" wx:for="{{messages}}">
+<view class="container wrap" wx:for="{{messages}}">
+
+    <view class="imList clearBox" wx:if="{{ userId == item.senderId }}">
         <image class="avatar" mode="" src=""></image>
 
         <view class="imContent">
@@ -24,19 +25,19 @@
         </view>
     </view>
 
-    <!-- <view class="imList clearBox">
+    <view class="imList clearBox" wx:if="{{ userId != item.senderId }}">
         <image class="right-avatar" mode="" src=""></image>
 
         <view class="right-imContent">
             <view class="message-box">
-                <text>我是利用 border 属性实现我是利用 border 属性实现的我是利用 border 属性实现的我是利用 border 属性实现的我是利用 border 属性实现的我是利用 border 属性实现的的</text>
+                <text>{{item.text}}</text>
                 <view class="right-triangle-border right-tb-border"></view>
                 <view class="right-triangle-border right-tb-background"></view>
             </view>
         </view>
     </view>
 
-    <view class="imList clearBox">
+    <!-- <view class="imList clearBox">
         <image class="avatar" mode="" src=""></image>
         <view class="imContent">
             <view class="message-box" style="height: 34px; width: 100px; top: 8px;">

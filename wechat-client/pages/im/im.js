@@ -1,7 +1,8 @@
 Page({
     data: {
         topicContent: '',
-        message: []
+        message: [],
+        userId: 0
     },
     getMessages(roomId) {
         var self = this;
@@ -19,11 +20,13 @@ Page({
         });
     },
     onLoad(options) {
+        var userId = wx.getStorageSync('userId');
         var data = JSON.parse(options.data);
         var topicsId = data.topicsId;
         var roomId = data.roomId;
         console.log(data);
         this.setData({'topicContent': data.topicContent})
+        this.setData({'userId': userId})
         this.getMessages(roomId);
 
     }
