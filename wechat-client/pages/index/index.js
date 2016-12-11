@@ -16,7 +16,6 @@ Page({
         });
     },
     selectIndexTab(e) {
-        console.log(e);
         this.setData({
             tab: +e.currentTarget.id
         });
