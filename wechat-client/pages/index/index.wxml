@@ -9,7 +9,7 @@
     <view class="content" hidden="{{ tab }}">
         <view class="list" wx:for="{{topics}}" wx:for-item="topic" wx:for-index="idx">
             <view class="clearBox">
-                <view class="tip" style="margin-bottom: 20rpx;"><i class="tipText">— 工作 —</i></view>
+                <view class="tip" style="margin-bottom: 20rpx;"><i class="tipText">— {{ !topic.labels[0].name ? '其他':topic.labels[0].name }} —</i></view>
                 <text class="time">{{ topic.date }}</text>
             </view>
 
@@ -39,7 +39,7 @@
             </view>
         </view>
 
-        <image hidden="labels.length" src="../../images/logo.png" style="margin: 0 auto; margin-top: 200rpx;display: block; width: 200rpx; height: 260rpx;"></image>
+        <image wx:if="{{!topics.length}}" src="../../images/logo.png" style="margin: 0 auto; margin-top: 200rpx;display: block; width: 200rpx; height: 260rpx;"></image>
     </view>
 
 

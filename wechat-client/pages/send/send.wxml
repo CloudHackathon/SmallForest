@@ -5,7 +5,7 @@
 
     <view class="sendMain">
         <view class="tab wrap">
-            <text wx:for="{{labels}}" wx:key="idx" wx:for-index="idx" wx:for-item="label" class="tabItem {{ tab == label.id ? 'current' : '' }}" bindtap="selectLabel" id="{{label.id}}">{{ label.name }}</text>
+            <text wx:for="{{labels}}" wx:key="idx" wx:for-index="idx" wx:for-item="label" class="tabItem {{ tab == label.id ? 'current' : '' }}" bindtap="selectLabel" id="{{label.id}}">{{ label.name }}{{label.id}}</text>
         </view>
 
         <view class="send" bindtap="sendTopic"><text class="finish"> 吐槽完毕 </text></view>
