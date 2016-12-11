@@ -44,7 +44,7 @@
     <view class="content" hidden="{{ !tab }}" >
         <view class="list" wx:for="{{appliedTopics}}" wx:for-item="topic" wx:for-index="idx">
             <view class="watchList clearBox" wx:for="{{topic.rooms}}" wx:for-item="room">
-                <image class="avatar" mode="" src="../../images/avatar/t1.png"></image>
+                <image class="avatar" mode="" src="../../images/avatar/t1.jpg"></image>
 
                 <view class="tipStyle">
                     <text class="chatInfo"> {{topic.content}} </text>
