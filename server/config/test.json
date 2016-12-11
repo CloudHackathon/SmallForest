@@ -1,7 +1,7 @@
 {
   "session": {
-    "store": "memory",
-    "cookieExpire": 3600
+    "store": "redis",
+    "cookieExpire": 86400
   },
   "mysql": {
     "host": "584bfa9f89285.bj.cdb.myqcloud.com",
@@ -18,8 +18,9 @@
     }
   },
   "redis": {
-    "host": "localhost",
-    "port": 6379
+    "host": "10.66.185.55",
+    "port": 6379,
+    "auth_pass": "oBLK4bHTyFn8WR"
   },
   "auth": {
     "authedIpReg": ""
