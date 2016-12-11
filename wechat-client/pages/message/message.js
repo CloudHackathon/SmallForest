@@ -1,22 +1,19 @@
 Page({
     data: {
-
+        lists : [],
+        topics: []
     },
     onLoad(e) {
         let cookies = wx.getStorageSync('cookies');
+        let userId = wx.getStorageSync('userId');
+        let self = this;
         wx.request({
-            method: 'POST',
-            url: 'http://sweetvvck.com:3000/users/' + this.data.userId + '/notices',
+            url: 'http://sweetvvck.com:3000/users/' + userId + '/notices',
             header: {
                 'Cookie': cookies
             },
-            data: {
-                'content' : this.data.value,
-                'ownerId' : this.data.userId,
-                'labelIds': this.data.labelArr
-            },
             success: function (res) {
-
+                self.setData({'lists': res.data});
             }
         });
     }

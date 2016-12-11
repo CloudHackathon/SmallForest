@@ -29,9 +29,6 @@ Page({
             return;
         }
 
-        console.log(this.data.tab);
-        console.log(this.data.value);
-
         let cookies = wx.getStorageSync('cookies');
         wx.request({
             method: 'POST',
