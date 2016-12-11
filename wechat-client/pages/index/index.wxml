@@ -21,11 +21,11 @@
                 <image class="avatar" mode="" src=""></image>
 
                 <view class="tipStyle">
-                    <text class="chatInfo"> 这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题这是话题话题话题 </text>
+                    <text class="chatInfo"> {{topic.content}} </text>
                     <view class="styleList">
                         <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
-                        <text class="styleItem">设计师</text>
+                        <text class="styleItem">情感专家</text>
+                        <text class="styleItem">巨蟹座</text>
                         <text class="etc">...</text>
                     </view>
                 </view>
@@ -44,30 +44,35 @@
 
 
     <view class="content" hidden="{{ !tab }}" >
-        <view class="list">
-            <view class="watchList clearBox">
+        <view class="list" wx:for="{{appliedTopics}}" wx:for-item="topic" wx:for-index="idx">
+            <view class="watchList clearBox" wx:for="{{topic.rooms}}" wx:for-item="room">
                 <image class="avatar" mode="" src="../../images/avatar/t1.png"></image>
 
                 <view class="tipStyle">
-                    <text class="chatInfo"> 请问大家介意跟情侣住而且养狗吗？ </text>
+                    <text class="chatInfo"> {{topic.content}} </text>
                     <view class="styleList">
-                        <text class="styleItem">室友</text>
-                        <text class="styleItem">宠物</text>
-                        <text class="styleItem">声音</text>
+                      <text class="styleItem">程序员</text>
+                      <text class="styleItem">易怒</text>
+                      <text class="styleItem">天蝎</text>
                         <text class="etc">...</text>
                     </view>
                 </view>
-                <image class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
+                <image
+                    bindtap="enterIMpage"
+                    data-room-id="{{ room.id }}"
+                    data-topic-id="{{ room.topicId }}"
+                    data-topic-content="{{ topic.content }}"
+                    class="wechat" src="http://smallforest-1251013950.cosgz.myqcloud.com/wechatapp/WeChat_1481375220.png"></image>
                 <view class="disc"></view>
             </view>
 
             <view class="clearBox" style="margin-top: 20rpx; margin-bottom: 20rpx;">
-                <view class="tip"><i class="tipText">— 情侣吐槽 —</i></view>
+                <view class="tip"><i class="tipText"> {{ topic.label ? topic.label[0] : '' }} —</i></view>
                 <text class="time">2016-12-10</text>
             </view>
 
             <view class="listContent" style="padding-bottom: 30rpx;line-height: 1.5;">
-                新室友是一对儿情侣，好在基本上每天他们都窝在自己的小屋里不出来，蛮安静，也比之前的姑娘稍微注意一点卫生。 但是！他们养狗啊！
+                {{topic.content}}
             </view>
 
         </view>
